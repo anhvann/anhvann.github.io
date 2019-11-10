@@ -1,5 +1,4 @@
-var question = 1;
-var order = [1, 2, 3, 4];
+var order = [0, 1, 2, 3];
 var questions = [
 	"How surprised are you to encounter an actual bike with wheels?", 
 	"How easily do you imagine an actual bike with wheels?", 
@@ -29,6 +28,7 @@ var index = 0;
 	dbRefObject.on('value', snap => console.log(snap.val()));
 
   	order = shuffle(order);
+	console.log(questions);
 	updateQuestion();
 }());
 
@@ -54,12 +54,12 @@ function shuffle(array) {
 }
 
 function updateQuestion(){
-	document.getElementById("question").innerHTML = questions[index];
+	document.getElementById("question").innerHTML = questions[order[index]];
 }
 
 function answer(score) {
 	firebase.database().ref(key).update({
-	    [order[index]]: score
+	    [questions[order[index]]]: score
 	});
 	index++;
 	if(index < questions.length) {
