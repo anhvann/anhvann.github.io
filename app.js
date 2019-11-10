@@ -29,6 +29,7 @@ var index = 0;
 	dbRefObject.on('value', snap => console.log(snap.val()));
 
   	order = shuffle(order);
+	updateQuestion();
 }());
 
 var key = firebase.database().ref().push().key;
@@ -61,6 +62,10 @@ function answer(score) {
 	    [order[index]]: score
 	});
 	index++;
-	updateQuestion();
+	if(index < questions.length) {
+	   updateQuestion();
+	} else {
+	   window.location.href = 'end.html';
+	}
 }
 
