@@ -28,11 +28,36 @@ var index = 0;
 	dbRefObject.on('value', snap => console.log(snap.val()));
 
   	order = shuffle(order);
-	console.log(questions);
 	updateQuestion();
 }());
 
 var key = firebase.database().ref().push().key;
+
+function submit() {
+  var age = $("#age").val();
+  var gender = $("#gender").val();
+  var ethnicity = $("#ethnicity").val();
+  var nationality = $("#nationality").val();
+  var education = $("#education").val();
+  var occupation = $("#occupation").val();
+
+  firebase.database().ref(key).push({
+    "age": age,
+    "gender": gender,
+    "ethnicity": ethnicity,
+    "nationality": nationality,
+    "education": education,
+    "occupation": occupation
+  });
+};
+
+$(window).load(function () {
+
+  // Find the HTML element with the id recommendationForm, and when the submit
+  // event is triggered on that element, call submitRecommendation.
+  $("#demographics_form").submit(submit);
+
+});
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -58,7 +83,7 @@ function updateQuestion(){
 }
 
 function answer(score) {
-	firebase.database().ref(key).update({
+	firebase.database().ref(key+"/questions").update({
 	    [questions[order[index]]]: score
 	});
 	index++;
@@ -69,3 +94,28 @@ function answer(score) {
 	}
 }
 
+function submit() {
+  var age = $("#age").val();
+  var gender = $('input[name=gender]:checked').val()
+  var ethnicity = $("#ethnicity").val();
+  var nationality = $("#nationality").val();
+  var education = $("#education").val();
+  var occupation = $("#occupation").val();
+
+  firebase.database().ref(key).update({
+    "age": age,
+    "gender": gender,
+    "ethnicity": ethnicity,
+    "nationality": nationality,
+    "education": education,
+    "occupation": occupation
+  });
+};
+
+
+$('#demographics_form').submit(function(e) {
+    e.preventDefault();
+    submit();
+document.getElementById("demographics").style.display = "none";
+document.getElementById("questions").style.display = "block";
+});

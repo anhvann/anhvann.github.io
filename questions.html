@@ -4,9 +4,42 @@
   	<title>Page Title</title>
 	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   </head>
   <body>
+<div id="demographics">
+<form id="demographics_form">
+	<label for="age">Age:</label>
+	<input type="number" id="age" required>
+	<br><br>
+	
+	<label>Gender:</label><br>
+	<input type="radio" name="gender" value="male" checked="checked"> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<input type="radio" name="gender" value="other"> Other
+	<br><br>
 
+	<label for="etchnitity">Ethnicity:</label>
+	<input type="text" id="ethnicity" required>
+	<br><br>
+
+	<label for="nationality">Nationality:</label>
+	<input type="text" id="nationality" required>
+	<br><br>
+
+	<label for="education">Education:</education>
+	<input type="text" id="education" required>
+	<br><br>
+	
+	<label for="occupation">Occupation:</label>
+	<input type="text" id="occupation" required>
+	<br><br>
+	
+	<button type="submit">NEXT</button>
+</form>
+</div>
+
+<div id="questions" style="display:none">
 <p id="question"></p>
 <script src="app.js"></script>
 
@@ -17,5 +50,6 @@
 <a href="#" onclick="answer(5)">5</a>
 <a href="#" onclick="answer(6)">6</a>
 <a href="#" onclick="answer(7)">7</a>
+</div>
   </body>
 </html>
