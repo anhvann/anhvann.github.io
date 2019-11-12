@@ -1,55 +1,165 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<title>Page Title</title>
-	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  </head>
-  <body>
-<div id="demographics">
-<form id="demographics_form">
-	<label for="age">Age:</label>
-	<input type="number" id="age" required>
-	<br><br>
-	
-	<label>Gender:</label><br>
-	<input type="radio" name="gender" value="male" checked="checked"> Male<br>
-	<input type="radio" name="gender" value="female"> Female<br>
-	<input type="radio" name="gender" value="other"> Other
-	<br><br>
+    <head>
+        <title>Experiment</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-database.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    </head>
+    <body>
+        <div id="demographics">
+            <form id="demographics_form">
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td class="label"><label for="age">AGE</label></td>
+                            <td><input type="number" id="age" placeholder="Numeric years of existence" required></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label>GENDER</label></td>
+                            <td style="padding: 10px;">
+                                <input type="radio" name="gender" value="male" checked="checked"> <label>Male</label>
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="radio" class="radio" name="gender" value="female"><label>Female</label>
+                                &nbsp;&nbsp;                    
+                                <input type="radio" class="radio" name="gender" value="other"> <label>Other</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="etchnitity">ETHNICITY</label></td><td><input type="text" id="ethnicity" placeholder="Ethnic group of belonging" required></td>
+                        </tr>
 
-	<label for="etchnitity">Ethnicity:</label>
-	<input type="text" id="ethnicity" required>
-	<br><br>
+                        <tr>
+                            <td class="label"><label for="nationality">NATIONALITY</label></td>
+                            <td><input type="text" id="nationality" placeholder="Nation of belonging" required></td>                        
+                        </tr>
 
-	<label for="nationality">Nationality:</label>
-	<input type="text" id="nationality" required>
-	<br><br>
+                        <tr>
+                            <td class="label"><label for="education">EDUCATION</label></td>
+                            <td><input type="text" id="education" placeholder="Highest completed level and field of education" required></td>
+                        </tr>
 
-	<label for="education">Education:</education>
-	<input type="text" id="education" required>
-	<br><br>
-	
-	<label for="occupation">Occupation:</label>
-	<input type="text" id="occupation" required>
-	<br><br>
-	
-	<button type="submit">NEXT</button>
-</form>
-</div>
+                        <tr>
+                            <td class="label"><label for="occupation">OCCUPATION</label></td>
+                            <td><input type="text" id="occupation" placeholder="Main activity of engagement" required></td>
+                        </tr>
+                    </table>
+                </div>
 
-<div id="questions" style="display:none">
-<p id="question"></p>
-<script src="app.js"></script>
+                <button class="navigation_btn" type="submit">NEXT</button>
+            </form>
+        </div>
+        <div id="instructions" style="display:none">
+            <div class="content">
+                <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus
+                        massa vitae arcu tempus rhoncus. Cras maximus condimentum justo lacinia
+                        vulputate. Sed pellentesque varius diam, et aliquam augue luctus vel.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer sit
+                        amet consequat orci, ac volutpat velit. Sed in velit a lectus sollicitudin efficitur.
+                        Etiam commodo consequat mollis.</p>
+                    <p>Vivamus diam velit, auctor in elit eget, finibus laoreet quam. Donec volutpat
+                        sapien tempor nunc convallis pellentesque vel nec augue. Donec bibendum
+                        risus diam, ultricies rhoncus risus tempus sed. Morbi et lorem arcu.
+                        Maecenas eros risus, bibendum quis mi in, accumsan ultrices ligula. Class
+                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos. Vestibulum ut sodales leo, eu cursus velit. Mauris ut bibendum
+                        purus, vitae imperdiet odio. Pellentesque iaculis velit sed tortor tincidunt, non
+                        posuere purus pulvinar. Praesent nibh eros, ultricies nec augue in,
+                        ullamcorper pretium neque. Aliquam interdum, nulla ut sodales auctor, eros
+                        lorem consequat elit, sit amet fringilla leo erat ac metus. Phasellus in pharetra
+                        leo, in scelerisque sapien. Ut consequat libero risus, in convallis risus
+                        rhoncus nec. Nullam eu nunc blandit, ullamcorper tortor id, semper est. Nam
+                        elementum magna nunc, ut rhoncus diam feugiat ac.
+                    </p>
+                    <p>Mauris varius congue hendrerit. Curabitur fringilla mi ut erat faucibus, id
+                        auctor purus tempor. Duis elementum elit vel nisl hendrerit, eget interdum
+                        sapien tempus. Nulla accumsan orci nisi, non posuere lectus fringilla id. Sed
+                        sit amet nibh eleifend, euismod purus at, aliquam elit. Integer maximus, mi vel
+                        tempus mattis, lectus nibh ultricies eros, eget tempor lectus dolor ac tortor.
+                        Phasellus suscipit iaculis sodales. Suspendisse nec luctus tortor. Proin in
+                        dolor ullamcorper, efficitur nulla non, efficitur massa. Etiam feugiat nec nisi
+                        sed dignissim.
+                    </p>
+                </div>
+            </div>
+            <button class="navigation_btn" onclick="showStart()">NEXT</button>
+        </div>
 
-<button onclick="answer(1)">1</button>
-<button onclick="answer(2)">2</button>
-<button onclick="answer(3)">3</button>
-<button onclick="answer(4)">4</button>
-<button onclick="answer(5)">5</button>
-<button onclick="answer(6)">6</button>
-<button onclick="answer(7)">7</button>
-</div>
-  </body>
+        <div id="start" style="display:none">
+            <button class="navigation_btn" onclick="showQuestions()">START</button>
+        </div>
+
+        <div id="questions" style="display:none">
+            <div class="content"></div>
+
+            <p id="question"></p>
+
+            <button class="score_btn" onclick="answer(1)"></button>
+            <button class="score_btn" onclick="answer(2)"></button>
+            <button class="score_btn" onclick="answer(3)"></button>
+            <button class="score_btn" onclick="answer(4)"></button>
+            <button class="score_btn" onclick="answer(5)"></button>
+            <button class="score_btn"onclick="answer(6)"></button>
+            <button class="score_btn"onclick="answer(7)"></button>
+            <br>
+            <label class="score_label">1</label>
+            <label class="score_label">2</label>
+            <label class="score_label">3</label>
+            <label class="score_label">4</label>
+            <label class="score_label">5</label>
+            <label class="score_label">6</label>
+            <label class="score_label">7</label>
+        </div>
+
+        <div id="debrief" style="display:none">
+            <div class="content">
+                <div class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tempus
+                        massa vitae arcu tempus rhoncus. Cras maximus condimentum justo lacinia
+                        vulputate. Sed pellentesque varius diam, et aliquam augue luctus vel.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer sit
+                        amet consequat orci, ac volutpat velit. Sed in velit a lectus sollicitudin efficitur.
+                        Etiam commodo consequat mollis.</p>
+                    <p>Vivamus diam velit, auctor in elit eget, finibus laoreet quam. Donec volutpat
+                        sapien tempor nunc convallis pellentesque vel nec augue. Donec bibendum
+                        risus diam, ultricies rhoncus risus tempus sed. Morbi et lorem arcu.
+                        Maecenas eros risus, bibendum quis mi in, accumsan ultrices ligula. Class
+                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                        himenaeos. Vestibulum ut sodales leo, eu cursus velit. Mauris ut bibendum
+                        purus, vitae imperdiet odio. Pellentesque iaculis velit sed tortor tincidunt, non
+                        posuere purus pulvinar. Praesent nibh eros, ultricies nec augue in,
+                        ullamcorper pretium neque. Aliquam interdum, nulla ut sodales auctor, eros
+                        lorem consequat elit, sit amet fringilla leo erat ac metus. Phasellus in pharetra
+                        leo, in scelerisque sapien. Ut consequat libero risus, in convallis risus
+                        rhoncus nec. Nullam eu nunc blandit, ullamcorper tortor id, semper est. Nam
+                        elementum magna nunc, ut rhoncus diam feugiat ac.
+                    </p>
+                    <p>Mauris varius congue hendrerit. Curabitur fringilla mi ut erat faucibus, id
+                        auctor purus tempor. Duis elementum elit vel nisl hendrerit, eget interdum
+                        sapien tempus. Nulla accumsan orci nisi, non posuere lectus fringilla id. Sed
+                        sit amet nibh eleifend, euismod purus at, aliquam elit. Integer maximus, mi vel
+                        tempus mattis, lectus nibh ultricies eros, eget tempor lectus dolor ac tortor.
+                        Phasellus suscipit iaculis sodales. Suspendisse nec luctus tortor. Proin in
+                        dolor ullamcorper, efficitur nulla non, efficitur massa. Etiam feugiat nec nisi
+                        sed dignissim.
+                    </p>
+                </div>
+            </div>
+            <button class="navigation_btn" onclick="showEnding()">NEXT</button>
+        </div>
+
+        <div id="ending" style="display:none">
+            <div class="content">
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </h1>
+            </div>
+        </div>
+        
+        <script src="app.js"></script>
+    </body>
 </html>
