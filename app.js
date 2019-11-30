@@ -1,131 +1,98 @@
 var order = [];
-var questions = [
-    "How surprised are you to encounter an actual bike with wheels?",
-    "How easily can you imagine an actual bike with wheels?",
-    "How good an example of a bike do you consider an actual bike with wheels?",
-    "How similar is an actual bike with wheels to an ideal bike?",
-    "How surprised are you to encounter an actual bike of the brand TREK?",
-    "How easily can you imagine an actual bike of the brand TREK?",
-    "How good an example of a bike do you consider an actual bike of the brand TREK?",
-    "How similar is an actual bike of the brand TREK to an ideal bike?",
-    "How surprised are you to encounter an actual bike on a street?",
-    "How easily can you imagine an actual bike on a street?",
-    "How good an example of a bike do you consider an actual bike on a street?",
-    "How similar is an actual bike on a street to an ideal bike?",
-    "How surprised are you to encounter an actual bike with blades?",
-    "How easily can you imagine an actual bike with blades?",
-    "How good an example of a bike do you consider an actual bike with blades?",
-    "How similar is an actual bike with blades to an ideal bike?",
-    "How surprised are you to encounter an actual bike of the brand Disney?",
-    "How easily can you imagine an actual bike of the brand Disney?",
-    "How good an example of a bike do you consider an actual bike of the brand Disney?",
-    "How similar is an actual bike of the brand Disney to an ideal bike?",
-    "How surprised are you to encounter an actual bike on a bed?",
-    "How easily can you imagine an actual bike on a bed?",
-    "How good an example of a bike do you consider an actual bike on a bed?",
-    "How similar is an actual bike on a bed to an ideal bike?",
-    "How surprised are you to encounter an actual chair with a seat?",
-    "How easily can you imagine an actual chair with a seat?",
-    "How good an example of a chair do you consider an actual chair with a seat?",
-    "How similar is an actual chair with a seat to an ideal chair?",
-    "How surprised are you to encounter an actual chair of the brand IKEA?",
-    "How easily can you imagine an actual chair of the brand IKEA?",
-    "How good an example of a chair do you consider an actual chair of the brand IKEA?",
-    "How similar is an actual chair of the brand IKEA to an ideal chair?",
-    "How surprised are you to encounter an actual chair in a dining room?",
-    "How easily can you imagine an actual chair in a dining room?",
-    "How good an example of a chair do you consider an actual chair in a dining room?",
-    "How similar is an actual chair in a dining room to an ideal chair?",
-    "How surprised are you to encounter an actual chair with a blade?",
-    "How easily can you imagine an actual chair with a blade?",
-    "How good an example of a chair do you consider an actual chair with a blade?",
-    "How similar is an actual chair with a seat to an ideal blade?",
-    "How surprised are you to encounter an actual chair of the brand NIKON?",
-    "How easily can you imagine an actual chair of the brand NIKON?",
-    "How good an example of a chair do you consider an actual chair of the brand NIKON?",
-    "How similar is an actual chair of the brand NIKON to an ideal chair?",
-    "How surprised are you to encounter an actual chair in a swimming pool?",
-    "How easily can you imagine an actual chair in a swimming pool?",
-    "How good an example of a chair do you consider an actual chair in a swimming pool?",
-    "How similar is an actual chair in a swimming pool to an ideal chair?",
-    "How surprised are you to encounter an actual computer with a screen?",
-    "How easily can you imagine an actual computer with a screen?",
-    "How good an example of a computer do you consider an actual computer with a screen?",
-    "How similar is an actual computer with a screen to an ideal computer?",
-    "How surprised are you to encounter an actual computer of the brand HP?",
-    "How easily can you imagine an actual computer of the brand HP?",
-    "How good an example of a computer do you consider an actual computer of the brand HP?",
-    "How similar is an actual computer of the brand HP to an ideal computer?",
-    "How surprised are you to encounter an actual computer in an office?",
-    "How easily can you imagine an actual computer in an office?",
-    "How good an example of a computer do you consider an actual computer in an office?",
-    "How similar is an actual computer in an office to an ideal computer?",
-    "How surprised are you to encounter an actual computer with a wall?",
-    "How easily can you imagine an actual computer with a wall?",
-    "How good an example of a computer do you consider an actual computer with a wall?",
-    "How similar is an actual computer with a wall to an ideal computer?",
-    "How surprised are you to encounter an actual computer of the brand NIKE?",
-    "How easily can you imagine an actual computer of the brand NIKE?",
-    "How good an example of a computer do you consider an actual computer of the brand NIKE?",
-    "How similar is an actual computer of the brand NIKE to an ideal computer?",
-    "How surprised are you to encounter an actual computer in a swimming pool?",
-    "How easily can you imagine an actual computer in a swimming pool?",
-    "How good an example of a computer do you consider an actual computer in a swimming pool?",
-    "How similar is an actual computer in a swimming pool to an ideal computer?",
-    "How surprised are you to encounter an actual fridge with doors?",
-    "How easily can you imagine an actual fridge with doors?",
-    "How good an example of a fridge do you consider an actual fridge with doors?",
-    "How similar is an actual fridge with doors to an ideal fridge?",
-    "How surprised are you to encounter an actual fridge of the brand AEG?",
-    "How easily can you imagine an actual fridge of the brand AEG?",
-    "How good an example of a fridge do you consider an actual computer of the brand AEG?",
-    "How similar is an actual fridge of the brand AEG to an ideal fridge?",
-    "How surprised are you to encounter an actual fridge in a kitchen?",
-    "How easily can you imagine an actual fridge in a kitchen?",
-    "How good an example of a fridge do you consider an actual fridge in a kitchen?",
-    "How similar is an actual fridge in a kitchen to an ideal fridge?",
-    "How surprised are you to encounter an actual fridge with wings?",
-    "How easily can you imagine an actual fridge with wings?",
-    "How good an example of a fridge do you consider an actual fridge with wings?",
-    "How similar is an actual fridge with wings to an ideal fridge?",
-    "How surprised are you to encounter an actual fridge of the brand Kodak?",
-    "How easily can you imagine an actual fridge of the brand Kodak?",
-    "How good an example of a fridge do you consider an actual computer of the brand Kodak?",
-    "How similar is an actual fridge of the brand Kodak to an ideal fridge?",
-    "How surprised are you to encounter an actual fridge in a forest?",
-    "How easily can you imagine an actual fridge in a forest?",
-    "How good an example of a fridge do you consider an actual fridge in a forest?",
-    "How similar is an actual fridge in a forest to an ideal fridge?",
-    "How surprised are you to encounter an actual pot with a handle?",
-    "How easily can you imagine an actual pot with a handle?",
-    "How good an example of a pot do you consider an actual pot with a handle?",
-    "How similar is an actual pot with a handle to an ideal pot?",
-    "How surprised are you to encounter an actual pot of the brand Zwilling?",
-    "How easily can you imagine an actual pot of the brand Zwilling?",
-    "How good an example of a pot do you consider an actual computer of the brand Zwilling?",
-    "How similar is an actual pot of the brand Zwilling to an ideal pot?",
-    "How surprised are you to encounter an actual pot in a kitchen?",
-    "How easily can you imagine an actual pot in a kitchen?",
-    "How good an example of a pot do you consider an actual pot in a kitchen?",
-    "How similar is an actual pot in a kitchen to an ideal pot?",
-    "How surprised are you to encounter an actual pot with water controls?",
-    "How easily can you imagine an actual pot with water controls?",
-    "How good an example of a pot do you consider an actual pot with water controls?",
-    "How similar is an actual pot with water controls to an ideal pot?",
-    "How surprised are you to encounter an actual pot of the brand Mercedes?",
-    "How easily can you imagine an actual pot of the brand Mercedes?",
-    "How good an example of a pot do you consider an actual computer of the brand Mercedes?",
-    "How similar is an actual pot of the brand Mercedes to an ideal pot?",
-    "How surprised are you to encounter an actual pot in a bar?",
-    "How easily can you imagine an actual pot in a bar?",
-    "How good an example of a pot do you consider an actual pot in a bar?",
-    "How similar is an actual pot in a bar to an ideal pot?"];
-var answers = [];
+var images = [
+	"a_1_bike_ooo",
+	"a_2_bike_xoo",
+	"a_3_bike_oxo",
+	"a_4_bike_oox",
+	"a_5_bike_xxo",
+	"a_6_bike_xox",
+	"a_7_bike_oxx",
+	"a_8_bike_xxx",
+	"b_1_fridge_ooo",
+	"b_2_fridge_xoo",
+	"b_3_fridge_oxo",
+	"b_4_fridge_oox",
+	"b_5_fridge_xxo",
+	"b_6_fridge_xox",
+	"b_7_fridge_oxx",
+	"b_8_fridge_xxx"];
+var question_surprise = [
+	"How surprised are you to encounter an actual bike with wheels by TREK on a street?",
+	"How surprised are you to encounter an actual bike with blades by TREK on a street?",
+	"How surprised are you to encounter an actual bike with wheels by Disney on a street?",
+	"How surprised are you to encounter an actual bike with wheels by TREK on a bed?",
+	"How surprised are you to encounter an actual bike with blades by Disney on a street?",
+	"How surprised are you to encounter an actual bike with blades by TREK on a bed?",
+	"How surprised are you to encounter an actual bike with wheels by Disney on a bed?",
+	"How surprised are you to encounter an actual bike with blades by Disney on a bed?",
+	"How surprised are you to encounter an actual fridge with doors by AEG in a kitchen?",
+	"How surprised are you to encounter an actual fridge with wings by AEG in a kitchen?",
+	"How surprised are you to encounter an actual fridge with doors by Kodak in a kitchen?",
+	"How surprised are you to encounter an actual fridge with doors by AEG in a forest?",
+	"How surprised are you to encounter an actual fridge with wings by Kodak in a kitchen?",
+	"How surprised are you to encounter an actual fridge with wings by AEG in a forest?",
+	"How surprised are you to encounter an actual fridge with doors by Kodak in a forest?",
+	"How surprised are you to encounter an actual fridge with wings by Kodak in a forest?"];
+var question_imagine = [
+	"How easily can you imagine an actual bike with wheels by TREK on a street?",
+	"How easily can you imagine an actual bike with blades by TREK on a street?",
+	"How easily can you imagine an actual bike with wheels by Disney on a street?",
+	"How easily can you imagine an actual bike with wheels by TREK on a bed?",
+	"How easily can you imagine an actual bike with blades by Disney on a street?",
+	"How easily can you imagine an actual bike with blades by TREK on a bed?",
+	"How easily can you imagine an actual bike with wheels by Disney on a bed?",
+	"How easily can you imagine an actual bike with blades by Disney on a bed?",
+	"How easily can you imagine an actual fridge with doors by AEG in a kitchen?",
+	"How easily can you imagine an actual fridge with wings by AEG in a kitchen?",
+	"How easily can you imagine an actual fridge with doors by Kodak in a kitchen?",
+	"How easily can you imagine an actual fridge with doors by AEG in a forest?",
+	"How easily can you imagine an actual fridge with wings by Kodak in a kitchen?",
+	"How easily can you imagine an actual fridge with wings by AEG in a forest?",
+	"How easily can you imagine an actual fridge with doors by Kodak in a forest?",
+	"How easily can you imagine an actual fridge with wings by Kodak in a forest?"];
+var question_example = [
+	"How good an example of bike do you consider an actual bike with wheels by TREK on a street?",
+	"How good an example of bike do you consider an actual bike with blades by TREK on a street?",
+	"How good an example of bike do you consider an actual bike with wheels by Disney on a street?",
+	"How good an example of bike do you consider an actual bike with wheels by TREK on a bed?",
+	"How good an example of bike do you consider an actual bike with blades by Disney on a street?",
+	"How good an example of bike do you consider an actual bike with blades by TREK on a bed?",
+	"How good an example of bike do you consider an actual bike with wheels by Disney on a bed?",
+	"How good an example of bike do you consider an actual bike with blades by Disney on a bed?",
+	"How good an example of fridge do you consider an actual fridge with doors by AEG in a kitchen?",
+	"How good an example of fridge do you consider an actual fridge with wings by AEG in a kitchen?",
+	"How good an example of fridge do you consider an actual fridge with doors by Kodak in a kitchen?",
+	"How good an example of fridge do you consider an actual fridge with doors by AEG in a forest?",
+	"How good an example of fridge do you consider an actual fridge with wings by Kodak in a kitchen?",
+	"How good an example of fridge do you consider an actual fridge with wings by AEG in a forest?",
+	"How good an example of fridge do you consider an actual fridge with doors by Kodak in a forest?",
+	"How good an example of fridge do you consider an actual fridge with wings by Kodak in a forest?"];
+
+var question_ideal = [
+	"How similar is an actual bike with wheels by TREK on a street to an ideal bike?",
+	"How similar is an actual bike with blades by TREK on a street to an ideal bike?",
+	"How similar is an actual bike with wheels by Disney on a street to an ideal bike?",
+	"How similar is an actual bike with wheels by TREK on a bed to an ideal bike?",
+	"How similar is an actual bike with blades by Disney on a street to an ideal bike?",
+	"How similar is an actual bike with blades by TREK on a bed to an ideal bike?",
+	"How similar is an actual bike with wheels by Disney on a bed to an ideal bike?",
+	"How similar is an actual bike with blades by Disney on a bed to an ideal bike?",
+	"How similar is an actual fridge with doors by AEG in a kitchen to an ideal fridge?",
+	"How similar is an actual fridge with wings by AEG in a kitchen to an ideal fridge?",
+	"How similar is an actual fridge with doors by Kodak in a kitchen to an ideal fridge?",
+	"How similar is an actual fridge with doors by AEG in a kitchen to an ideal forest?",
+	"How similar is an actual fridge with wings by Kodak in a kitchen to an ideal fridge?",
+	"How similar is an actual fridge with wings by AEG in a kitchen to an ideal forest?",
+	"How similar is an actual fridge with doors by Kodak in a kitchen to an ideal forest?",
+	"How similar is an actual fridge with wings by Kodak in a kitchen to an ideal forest?"];
+
+
+
 var index = 0;
 
 (function(){
     // Your web app's Firebase configuration
-    var firebaseConfig = {
+    var config = {
         apiKey: "AIzaSyDuMfH66rv7R_A3JKhstTanRlOCFFRjXKE",
         authDomain: "surveytest-ec05d.firebaseapp.com",
         databaseURL: "https://surveytest-ec05d.firebaseio.com",
@@ -136,11 +103,11 @@ var index = 0;
     };
 
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const preObject = document.getElementById('object');
-    const dbRefObject = firebase.database().ref().child('object');
+    firebase.initializeApp(config);
+    //const preObject = document.getElementById('object');
+    //const dbRefObject = firebase.database().ref().child('object');
 
-    dbRefObject.on('value', snap => console.log(snap.val()));
+    //dbRefObject.on('value', snap => console.log(snap.val()));
     createOrder();
     order = shuffle(order);
     updateQuestion();
@@ -149,7 +116,7 @@ var index = 0;
 var key = firebase.database().ref().push().key;
 
 function createOrder(){
-    for(i = 0; i<questions.length; i++){
+    for(var i = 0; i < images.length; i++){
         order.push(i);
     }
 }
@@ -196,16 +163,53 @@ function shuffle(array) {
     return array;
 }
 
+var answered = 0;
+var currentButtons = [];
+var currentAnswers = [];
+var answers = [];
+
 function updateQuestion(){
-    document.getElementById("question").innerHTML = questions[order[index]];
-    console.log("Showing question " + order[index] + "(" + index + "): " + questions[order[index]]);
+    //console.log("Showing question " + order[index] + "(" + index + "): " + questions[order[index]]);
+    if (currentButtons != null){
+        for(var i = 0; i < currentButtons.length; i++){
+            currentButtons[i].style.backgroundImage = "url(images/rb_01.png)";
+        }
+    }
+    
+    currentButtons = [];
+    currentAnswers = [];
+    answered = 0;
+    document.getElementById("answer_button").style.visibility = "hidden";
+    
+    var img = "url(set_01_images/" + images[order[index]] + ".png";
+    document.getElementById("question_image").style.background = img;
+    document.getElementById("question_image").style.backgroundSize = "contain";
+    document.getElementById("question1").innerHTML = question_surprise[order[index]];
+    document.getElementById("question2").innerHTML = question_imagine[order[index]];
+    document.getElementById("question3").innerHTML = question_example[order[index]];
+    document.getElementById("question4").innerHTML = question_ideal[order[index]];
 }
 
-function answer(score) {
-    answers[order[index]] = score;
-    console.log(order[index]+" : "+ answers);
+function answer(button, num, score) {
+    //console.log(order[index]+" : "+ answers);
+    if(currentButtons[num] != null){
+        currentButtons[num].style.backgroundImage = "url(images/rb_01.png)";
+    } else {
+        answered++;
+    }
+    currentButtons[num] = button;
+    currentAnswers[num] = score;
+    button.style.backgroundImage = "url(images/rb_02.png)";
+    
+    if(answered == 4){
+        document.getElementById("answer_button").style.visibility = "visible";
+    }
+}
+
+function submitAnswers(){
+    answers[index] = currentAnswers;
     index++;
-    if(index < questions.length) {
+    if(index < images.length) {
         updateQuestion();
     } else {
         firebase.database().ref(key).update({
