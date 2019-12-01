@@ -8,7 +8,7 @@
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     </head>
     <body>
-        <div id="demographics">
+        <div id="demographics" style="display:none">
             <form id="demographics_form">
                 <div class="content">
                     <!--        <button class="navigation_btn" onclick="testDatabase()">TEST DATABASE</button>-->
@@ -67,7 +67,7 @@
             <button class="navigation_btn" onclick="showQuestions()">START</button>
         </div>
 
-        <div id="questions" style="display:none">
+        <div id="questions">
             <div id="question_image" class="content"></div>
             <p class="question_label" id="question1"/>
             <table class="question_table" align="center">
@@ -160,7 +160,7 @@
                 </tr>
             </table>
             <br/>
-            <button id="answer_button" class="navigation_btn" onclick="submitAnswers()" style="visibility :hidden">NEXT</button>
+            <button disabled id="answer_button" class="navigation_btn" onclick="submitAnswers()">NEXT</button>
         </div>
 
         
@@ -187,7 +187,7 @@
         <div id="ending" style="display:none">
             <div class="content">
                 <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    I hope to see you again.
                 </h1>
             </div>
         </div>

@@ -179,7 +179,8 @@ function updateQuestion(){
     currentButtons = [];
     currentAnswers = [];
     answered = 0;
-    document.getElementById("answer_button").style.visibility = "hidden";
+//    document.getElementById("answer_button").style.visibility = "hidden";
+    document.getElementById("answer_button").disabled = true;
     
     var img = "url(set_01_images/" + images[order[index]] + ".png";
     document.getElementById("question_image").style.background = img;
@@ -202,7 +203,8 @@ function answer(button, num, score) {
     button.style.backgroundImage = "url(images/rb_02.png)";
     
     if(answered == 4){
-        document.getElementById("answer_button").style.visibility = "visible";
+//        document.getElementById("answer_button").style.visibility = "visible";
+        document.getElementById("answer_button").disabled = false;
     }
 }
 
