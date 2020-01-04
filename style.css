@@ -30,14 +30,12 @@ body {
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
+.item {
     flex: 20%;
     max-width: 20%;
-}
-
-.item {
     position: relative;
 }
+
 .item img {
     vertical-align: middle;
     width: 100%;
@@ -93,7 +91,7 @@ body {
     .label{
         font-size: 1.2em;
     }
-    .column {
+    .item {
         flex: 25%;
         max-width: 25%;
     }
@@ -105,7 +103,7 @@ body {
     .price {
         font-size: 1.5em;
     }
-    .column {
+    .item {
         flex: 50%;
         max-width: 50%;
     }
@@ -116,7 +114,7 @@ body {
     .label {
         font-size: 2em;
     }
-    .column {
+    .item {
         flex: 100%;
         max-width: 100%;
     }
