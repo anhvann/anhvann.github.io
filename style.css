@@ -41,7 +41,21 @@ body {
     width: 100%;
 }
 
+.item .desc {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #333333;
+    font-size: 1.1em;
+    font-weight: 200;
+    text-align: left;
+    background: #FFFFFF;
+}
+
 .hover_wrapper {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
