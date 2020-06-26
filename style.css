@@ -51,6 +51,7 @@ body {
     font-weight: 200;
     text-align: left;
     background: #FFFFFF;
+    cursor: pointer;
 }
 
 .hover_wrapper {
